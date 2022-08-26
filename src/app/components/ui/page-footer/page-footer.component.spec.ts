@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PageNavbarComponent } from './page-navbar.component';
+import { PageFooterComponent } from './page-footer.component';
 
-describe('PageNavbarComponent', () => {
-  let component: PageNavbarComponent;
-  let fixture: ComponentFixture<PageNavbarComponent>;
+describe('PageFooterComponent', () => {
+  let component: PageFooterComponent;
+  let fixture: ComponentFixture<PageFooterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PageNavbarComponent ]
+      declarations: [ PageFooterComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PageNavbarComponent);
+    fixture = TestBed.createComponent(PageFooterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,16 +1,38 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ContactComponent } from './components/contact/contact.component';
+import { CreateDepartmentComponent } from './components/departments/create-department/create-department.component';
+import { DepartmentsComponent } from './components/departments/departments.component';
+import { FetchDepartmensComponent } from './components/departments/fetch-departmens/fetch-departmens.component';
+import { UpdateDepartmentComponent } from './components/departments/update-department/update-department.component';
+import { EmployeeComponent } from './components/employee/employee.component';
 import { ErrorComponent } from './components/error/error.component';
-import { HomePageComponent } from './components/home-page/home-page.component';
-import { ProductComponent } from './components/product/product.component';
 
 export const appRoutes: Routes = [
-  { path: 'home', component: HomePageComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'product', component: ProductComponent },
+  {
+    path: 'departments',
+    component: DepartmentsComponent,
+    children: [
+      {
+        path: '',
+        component: FetchDepartmensComponent,
+      },
+      {
+        path: 'create',
+        component: CreateDepartmentComponent,
+      },
+      {
+        path: 'update',
+        component: UpdateDepartmentComponent,
+      }
+    ],
+  },
+  { path: 'employees', component: EmployeeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'search', loadChildren: () => import(`./search/search.module`).then(m => m.SearchModule) },
+  {
+    path: 'search',
+    loadChildren: () =>
+      import(`./search/search.module`).then((m) => m.SearchModule),
+  },
   { path: '**', component: ErrorComponent },
 ];
 @NgModule({

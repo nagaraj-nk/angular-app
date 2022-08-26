@@ -11,6 +11,8 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
+      providers: [
+      ]
     }).compileComponents();
   });
 
@@ -18,12 +20,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
-  });
-
-  it(`should have as title 'angular-app-base'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-app-base');
   });
 
   it('should render title', () => {

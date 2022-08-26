@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Route, Router } from '@angular/router';
 import { User } from './model/user';
-import { UserService } from './service/user-service';
 
 @Component({
   selector: 'app-root',
@@ -13,13 +11,9 @@ export class AppComponent {
 
   user: User | undefined;
 
-  constructor(private userService: UserService, private route: Router) {}
+  constructor() {}
 
   ngOnInit() {
-  }
-
-  navigate() {
-    this.route.navigate(["/search/results"], {});
   }
 
 }
