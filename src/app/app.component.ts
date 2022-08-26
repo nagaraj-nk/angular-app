@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { User } from './model/user';
 import { UserService } from './service/user-service';
 
@@ -12,30 +13,13 @@ export class AppComponent {
 
   user: User | undefined;
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private route: Router) {}
 
   ngOnInit() {
-    this.showUser();
   }
 
-  showUser() {
-    this.userService.getUser().subscribe(
-      (data: User) => {
-        this.user = {
-          name: data.name,
-          email: data.email,
-        };
-        console.log(this.user);
-      },
-      (error) => {
-        //Error callback
-        console.error('Request failed with error');
-        alert(error);
-      },
-      () => {
-        //Complete callback
-        console.log('Request completed');
-      }
-    );
+  navigate() {
+    this.route.navigate(["/search/results"], {});
   }
+
 }
