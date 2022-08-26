@@ -5,29 +5,37 @@ import { DepartmentsService } from 'src/app/services/departments.service';
 @Component({
   selector: 'app-create-department',
   templateUrl: './create-department.component.html',
-  styleUrls: ['./create-department.component.css']
+  styleUrls: ['./create-department.component.css'],
 })
 export class CreateDepartmentComponent implements OnInit {
-  name: string = ''
-  success: string | undefined
+  name: string = '';
+  success: string | undefined;
+  error: string | undefined;
   
-  constructor(private departmentService: DepartmentsService) { 
-  }
 
-  ngOnInit(): void {
-  }
+  constructor(private departmentService: DepartmentsService) {}
+
+  ngOnInit(): void {}
 
   createDepartment() {
-    console.log(this.name)
+    console.log(this.name);
     const department = {
-      name: this.name
+      name: this.name,
     };
 
     console.log(department);
 
-    this.departmentService.createDepartment(department).subscribe((data)=>{
-      this.success = data;
-    });
+    this.departmentService.createDepartment(department).subscribe(
+      (data: any) => {
+        this.success = data;
+      },
+      (error) => {
+        this.error = "Something went wrong";
+        console.log(error);
+      },
+      () => {
+        console.log('request completed');
+      }
+    );
   }
-
 }
