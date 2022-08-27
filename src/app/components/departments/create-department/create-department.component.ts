@@ -11,7 +11,6 @@ export class CreateDepartmentComponent implements OnInit {
   name: string = '';
   success: string | undefined;
   error: string | undefined;
-  
 
   constructor(private departmentService: DepartmentsService) {}
 
@@ -25,17 +24,18 @@ export class CreateDepartmentComponent implements OnInit {
 
     console.log(department);
 
-    this.departmentService.createDepartment(department).subscribe(
-      (data: any) => {
-        this.success = data;
-      },
-      (error) => {
-        this.error = "Something went wrong";
-        console.log(error);
-      },
-      () => {
-        console.log('request completed');
-      }
-    );
+    this.departmentService.createDepartment(department).subscribe({
+      next: this.onSuccessCreateDepartment.bind(this),
+      error: this.handleCreateDepartmentError.bind(this),
+    });
+  }
+
+  onSuccessCreateDepartment(data: any) {
+    this.success = data.message;
+  }
+
+  handleCreateDepartmentError(error: any) {
+    this.error = 'Something went wrong';
+    console.log(error);
   }
 }

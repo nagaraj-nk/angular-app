@@ -15,8 +15,8 @@ export class DepartmentsService {
 
   createDepartment(department: any) {
     let httpHeaders = new HttpHeaders();
-    httpHeaders.set('Accept', 'text/plain');
-    httpHeaders.set('Content-type', 'application/json');
+    httpHeaders.set('Accept', Constants.JSON_HEADER);
+    httpHeaders.set('Content-type', Constants.JSON_HEADER);
 
     return this.http.post<any>(Constants.DEPARTMENTS, department, {
       headers: httpHeaders,

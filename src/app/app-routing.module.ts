@@ -6,8 +6,17 @@ import { FetchDepartmensComponent } from './components/departments/fetch-departm
 import { UpdateDepartmentComponent } from './components/departments/update-department/update-department.component';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { ErrorComponent } from './components/error/error.component';
+import { HomeComponent } from './components/home/home.component';
 
 export const appRoutes: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'home',
+    redirectTo: '/'
+  },
   {
     path: 'departments',
     component: DepartmentsComponent,
@@ -27,7 +36,6 @@ export const appRoutes: Routes = [
     ],
   },
   { path: 'employees', component: EmployeeComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: 'search',
     loadChildren: () =>

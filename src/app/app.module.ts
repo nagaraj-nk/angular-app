@@ -15,6 +15,12 @@ import { CreateDepartmentComponent } from './components/departments/create-depar
 import { UpdateDepartmentComponent } from './components/departments/update-department/update-department.component';
 import { FetchDepartmensComponent } from './components/departments/fetch-departmens/fetch-departmens.component';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CreateEmployeeComponent } from './components/employee/create-employee/create-employee.component';
+import { FetchEmployeeComponent } from './components/employee/fetch-employee/fetch-employee.component';
+import { SuccessErrorAlertsComponent } from './components/ui/success-error-alerts/success-error-alerts.component';
+import { Utils } from './utils/utils';
 
 @NgModule({
   declarations: [
@@ -26,17 +32,23 @@ import { FormsModule } from '@angular/forms';
     EmployeeComponent,
     CreateDepartmentComponent,
     UpdateDepartmentComponent,
-    FetchDepartmensComponent
+    FetchDepartmensComponent,
+    HomeComponent,
+    CreateEmployeeComponent,
+    FetchEmployeeComponent,
+    SuccessErrorAlertsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     SearchModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [
-    ProductService
+    ProductService,
+    Utils
   ],
   bootstrap: [AppComponent]
 })
