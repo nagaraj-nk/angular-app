@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Department } from 'src/app/model/department';
 import { DepartmentsService } from 'src/app/services/departments.service';
+import { SuccessErrorServiceService } from 'src/app/services/success-error-service.service';
 
 @Component({
   selector: 'app-create-department',
@@ -9,12 +10,17 @@ import { DepartmentsService } from 'src/app/services/departments.service';
 })
 export class CreateDepartmentComponent implements OnInit {
   name: string = '';
-  success: string | undefined;
-  error: string | undefined;
 
-  constructor(private departmentService: DepartmentsService) {}
+  constructor(
+    private departmentService: DepartmentsService,
+    private response: SuccessErrorServiceService
+  ) {
 
-  ngOnInit(): void {}
+  }
+
+  ngOnInit(): void {
+    
+  }
 
   createDepartment() {
     console.log(this.name);
@@ -31,11 +37,14 @@ export class CreateDepartmentComponent implements OnInit {
   }
 
   onSuccessCreateDepartment(data: any) {
-    this.success = data.message;
+    console.log('on success: CreateDepartment');
+    
+    this.response.emitData(data);
   }
 
   handleCreateDepartmentError(error: any) {
-    this.error = 'Something went wrong';
-    console.log(error);
+    this.response.emitData({
+      'error': 'something went wrong'
+    });
   }
 }

@@ -3,16 +3,17 @@ import { Subject } from 'rxjs';
 import { ResponseMessage } from '../model/response-message';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SuccessErrorServiceService {
-
-  constructor() { }
+  constructor() {}
 
   observer = new Subject();
   public subscriber$ = this.observer.asObservable();
 
-  emitData(data:any) {
+  emitData(data: any) {
+    console.log('emitting data: ' + data);
+
     this.observer.next(data);
   }
 }

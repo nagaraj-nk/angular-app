@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorComponent } from './components/error/error.component';
 import { ProductService } from './services/product.service';
-import { SearchModule } from './search/search.module';
+import { SearchModule } from './modules/search/search.module';
 import { PageHeaderComponent } from './components/ui/page-header/page-header.component';
 import { PageFooterComponent } from './components/ui/page-footer/page-footer.component';
 import { DepartmentsComponent } from './components/departments/departments.component';

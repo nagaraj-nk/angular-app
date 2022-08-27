@@ -10,8 +10,6 @@ import { SuccessErrorServiceService } from 'src/app/services/success-error-servi
 })
 export class CreateEmployeeComponent implements OnInit {
   employee: Employee = new Employee();
-  success: string | undefined;
-  error: any | undefined;
 
   constructor(
     private employeeService: EmployeeService,
@@ -29,12 +27,12 @@ export class CreateEmployeeComponent implements OnInit {
   }
 
   onSuccessCreateEmployee(data: any) {
-    this.success = data;
+    this.responseService.emitData(data);
   }
 
   onErrorCreateEmployee(error: any) {
-    this.error = {
+    this.responseService.emitData({
       error: 'something went wrong',
-    };
+    });
   }
 }

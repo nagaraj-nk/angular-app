@@ -11,11 +11,11 @@ import { HomeComponent } from './components/home/home.component';
 export const appRoutes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: 'home',
-    redirectTo: '/'
+    redirectTo: '/',
   },
   {
     path: 'departments',
@@ -32,14 +32,14 @@ export const appRoutes: Routes = [
       {
         path: 'update',
         component: UpdateDepartmentComponent,
-      }
+      },
     ],
   },
   { path: 'employees', component: EmployeeComponent },
   {
     path: 'search',
     loadChildren: () =>
-      import(`./search/search.module`).then((m) => m.SearchModule),
+      import(`./modules/search/search.module`).then((m) => m.SearchModule),
   },
   { path: '**', component: ErrorComponent },
 ];

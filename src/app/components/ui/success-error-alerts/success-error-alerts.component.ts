@@ -11,11 +11,15 @@ export class SuccessErrorAlertsComponent implements OnInit {
   error: string | undefined;
 
   constructor(private responseService: SuccessErrorServiceService) {
+    
+  }
+
+  ngOnInit(): void {
     this.responseService.subscriber$.subscribe((data: any) => {
+      console.log('observing data: '+ JSON.stringify(data));
+      
       this.success = data.message;
       this.error = data.error;
     });
   }
-
-  ngOnInit(): void {}
 }
