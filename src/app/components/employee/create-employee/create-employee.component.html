@@ -1,21 +1,24 @@
-<div>
-    <p>Create</p>
-    <input type="text" id="typeText" class="form-control" [(ngModel)]="employee!.name" placeholder="Name" />
-    <br>
-    <input type="text" id="typeText" class="form-control" [(ngModel)]="employee!.email" placeholder="Email" />
-    <br>
-    <input type="text" id="typeText" class="form-control" [(ngModel)]="employee!.username" placeholder="Username" />
-    <br>
-    <input type="password" id="typeText" class="form-control" [(ngModel)]="employee!.password" placeholder="Password" />
-    <br>
-    <input type="text" id="typeText" class="form-control" [(ngModel)]="employee!.role" placeholder="Role" />
-    <br>
-    <input type="text" id="typeText" class="form-control" [(ngModel)]="employee!.salary" placeholder="Salary" />
-    <br>
-    <input type="text" id="typeText" class="form-control" [(ngModel)]="employee!.bandLevel" placeholder="Band Level" />
+<div class="row">
+    <div class="col-sm-6">
+        <p>Create</p>
+        <app-success-error-alerts></app-success-error-alerts>
+        <input type="text" class="form-control" [(ngModel)]="employee!.name" placeholder="Name" />
+        <br>
+        <input type="text" class="form-control" [(ngModel)]="employee!.email" placeholder="Email" />
+        <br>
+        <input type="text" class="form-control" [(ngModel)]="employee!.username" placeholder="Username" />
+        <br>
+        <input type="password" class="form-control" [(ngModel)]="employee!.password" placeholder="Password" />
+        <br>
+        <input type="text" class="form-control" [(ngModel)]="employee!.role" placeholder="Role" />
+        <br>
+        <input type="text" class="form-control" [(ngModel)]="employee!.salary" placeholder="Salary" />
+        <br>
+        <input type="text" class="form-control" [(ngModel)]="employee!.bandLevel" placeholder="Band Level" />
 
-    <br>
-    <button (click)="createEmployee()" class="btn btn-primary">Create</button>
-    <br>
-    <app-success-error-alerts></app-success-error-alerts>
+        <br>
+        <button (click)="createEmployee()" class="btn btn-primary">Create</button>
+        <br>
+
+    </div>
 </div>

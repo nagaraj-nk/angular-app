@@ -1,4 +1,11 @@
 <div>
-    <div class="alert alert-success" *ngIf="success">{{success}}</div>
-    <div class="alert alert-danger" *ngIf="error">{{error}}</div>
+    <div class="alert alert-success alert-dismissible" *ngIf="success">{{success}}
+        <button type="button" class="btn-close" data-mdb-dismiss="alert" aria-label="Close"
+            (click)="closeAlert()"></button>
+    </div>
+    <div class="alert alert-danger alert-dismissible" *ngIf="error">{{error}}
+        <button type="button" class="btn-close" data-mdb-dismiss="alert" aria-label="Close"
+            (click)="closeAlert()"></button>
+    </div>
+    <br>
 </div>

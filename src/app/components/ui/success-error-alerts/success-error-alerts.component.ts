@@ -11,7 +11,6 @@ export class SuccessErrorAlertsComponent implements OnInit {
   error: string | undefined;
 
   constructor(private responseService: SuccessErrorServiceService) {
-    
   }
 
   ngOnInit(): void {
@@ -21,5 +20,10 @@ export class SuccessErrorAlertsComponent implements OnInit {
       this.success = data.message;
       this.error = data.error;
     });
+  }
+
+  closeAlert() {
+    this.success='';
+    this.error='';
   }
 }
