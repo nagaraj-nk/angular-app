@@ -4,6 +4,7 @@ import { CreateDepartmentComponent } from './components/departments/create-depar
 import { DepartmentsComponent } from './components/departments/departments.component';
 import { FetchDepartmensComponent } from './components/departments/fetch-departmens/fetch-departmens.component';
 import { UpdateDepartmentComponent } from './components/departments/update-department/update-department.component';
+import { EmployeeDetailsComponent } from './components/employee/employee-details/employee-details.component';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { ErrorComponent } from './components/error/error.component';
 import { HomeComponent } from './components/home/home.component';
@@ -35,7 +36,14 @@ export const appRoutes: Routes = [
       },
     ],
   },
-  { path: 'employees', component: EmployeeComponent },
+  {
+    path: 'employee',
+    component: EmployeeComponent
+  },
+  {
+    path: 'employee/:id',
+    component: EmployeeDetailsComponent,
+  },
   {
     path: 'search',
     loadChildren: () =>

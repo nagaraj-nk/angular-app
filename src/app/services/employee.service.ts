@@ -15,12 +15,17 @@ export class EmployeeService {
     });
   }
 
+  fetchByID(id: number) {
+    return this.http.get<Employee>(Constants.EMPLOYEES + '/' + id, {
+      headers: this.utils.httpHeaders(),
+    });
+  }
+
   fetchByPage(page: number) {
     return this.http.get<Employee[]>(Constants.EMPLOYEES_BY_PAGE + '/' + page, {
       headers: this.utils.httpHeaders(),
     });
   }
-
   
   fetchByRole(role: string) {
     return this.http.get<Employee[]>(Constants.EMPLOYEES_BY_ROLE + '/' + role, {

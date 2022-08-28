@@ -46,7 +46,11 @@
                     <tbody>
                         <tr *ngFor="let employee of employeeList;">
                             <th scope="row">{{employee.employeeId}}</th>
-                            <td>{{employee.name}}</td>
+                            <td>
+                                <a [routerLink]="[employee.employeeId]">
+                                    {{employee.name}}
+                                </a>
+                            </td>
                             <td>{{employee.email}}</td>
                             <td>{{employee.username}}</td>
                             <td>{{employee.role}}</td>

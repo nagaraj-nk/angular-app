@@ -21,6 +21,7 @@ import { CreateEmployeeComponent } from './components/employee/create-employee/c
 import { FetchEmployeeComponent } from './components/employee/fetch-employee/fetch-employee.component';
 import { SuccessErrorAlertsComponent } from './components/ui/success-error-alerts/success-error-alerts.component';
 import { Utils } from './utils/utils';
+import { EmployeeDetailsComponent } from './components/employee/employee-details/employee-details.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { Utils } from './utils/utils';
     HomeComponent,
     CreateEmployeeComponent,
     FetchEmployeeComponent,
-    SuccessErrorAlertsComponent
+    SuccessErrorAlertsComponent,
+    EmployeeDetailsComponent
   ],
   imports: [
     BrowserModule,
