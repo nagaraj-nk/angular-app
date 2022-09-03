@@ -22,6 +22,7 @@ import { FetchEmployeeComponent } from './components/employee/fetch-employee/fet
 import { SuccessErrorAlertsComponent } from './components/ui/success-error-alerts/success-error-alerts.component';
 import { Utils } from './utils/utils';
 import { EmployeeDetailsComponent } from './components/employee/employee-details/employee-details.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { EmployeeDetailsComponent } from './components/employee/employee-details
     CreateEmployeeComponent,
     FetchEmployeeComponent,
     SuccessErrorAlertsComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

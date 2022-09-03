@@ -8,11 +8,12 @@ import { EmployeeDetailsComponent } from './components/employee/employee-details
 import { EmployeeComponent } from './components/employee/employee.component';
 import { ErrorComponent } from './components/error/error.component';
 import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
 
 export const appRoutes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: LoginComponent,
   },
   {
     path: 'home',

@@ -16,7 +16,7 @@ export class EmployeeService {
   }
 
   fetchByID(id: number) {
-    return this.http.get<Employee>(Constants.EMPLOYEES + '/' + id, {
+    return this.http.get<Employee>(Constants.EMPLOYEE_BY_ID + '/' + id, {
       headers: this.utils.httpHeaders(),
     });
   }
@@ -34,7 +34,7 @@ export class EmployeeService {
   }
 
   delete(employeeId: number) {
-    return this.http.delete<any>(Constants.EMPLOYEES + '/' + employeeId, {
+    return this.http.delete<any>(Constants.EMPLOYEE_BY_ID + '/' + employeeId, {
       headers: this.utils.httpHeaders(),
     });
   }

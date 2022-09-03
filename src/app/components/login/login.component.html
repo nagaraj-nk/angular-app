@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-sm-4 offset-4">
+        <br>
+        <p>Login to continue</p>
+        <input type="text" class="form-control" placeholder="Username" [(ngModel)]="loginAuth!.username" /><br>
+        <input type="password" class="form-control" placeholder="Password" [(ngModel)]="loginAuth!.password"/><br>
+        <button class="btn btn-primary" (click)="login()">Login</button>
+    </div>
+    <br>
+    <p>{{error}}</p>
+</div>
